@@ -38,20 +38,17 @@ TRIMAPE-BACKEND/
 
     Clona este repositorio:
 
-Mostrar siempre los detalles
 
 git clone https://github.com/Raccoon124/TRIMAPE-BACKEND.git
 cd TRIMAPE-BACKEND
 
 Instala las dependencias:
 
-Mostrar siempre los detalles
 
 npm install
 
 Configura las variables de entorno en un archivo .env:
 
-Mostrar siempre los detalles
 
 DB_HOST=localhost
 DB_USER=tu_usuario
@@ -62,7 +59,6 @@ PORT=3000
 
 Inicia el servidor:
 
-Mostrar siempre los detalles
 
     npm start
 
