@@ -1,5 +1,3 @@
-# Crear el contenido del archivo README.md
-readme_content = """
 # TRIMAPE Backend
 
 Backend del proyecto TRIMAPE, diseñado para gestionar procesos relacionados con órdenes de servicio, check-ins, reportes y más, proporcionando una solución eficiente y escalable.
