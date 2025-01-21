@@ -6,6 +6,7 @@ const userRoutes = require('./routes/users');
 const authRoutes = require('./routes/auth');
 const checkInsRoutes = require('./routes/checkIns'); // Ajusta la ruta según la estructura de tu proyecto
 require('dotenv').config(); // Cargar variables de entorno
+const path = require('path');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -27,6 +28,7 @@ app.use('/api/users', userRoutes);
 app.use('/api/auth', authRoutes); // Registrar las rutas de autenticación
 app.use('/api/check-ins', checkInsRoutes);
 app.use(express.json());
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // Ruta base para probar que el servidor funciona
 app.get('/', (req, res) => {
