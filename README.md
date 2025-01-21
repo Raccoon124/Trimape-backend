@@ -91,12 +91,10 @@ Check-ins
 
 🖊️ Contribuciones
 
-¡Contribuciones son bienvenidas! Si deseas colaborar, por favor crea un fork del repositorio, realiza tus cambios y envía un pull request.
 📄 Licencia
-
 Este proyecto está bajo la licencia MIT.
-💬 Contacto
 
+💬 Contacto
 Si tienes dudas o sugerencias, por favor contáctame
 
 
