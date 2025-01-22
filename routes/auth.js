@@ -38,6 +38,8 @@ router.post('/login', (req, res) => {
         res.status(200).json({
             token,
             userId: user.id, // Agregar el userId a la respuesta
+            name: user.name,
+            email: user.email,
             message: 'Inicio de sesión exitoso.',
         });
     });

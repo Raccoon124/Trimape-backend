@@ -7,9 +7,17 @@ const authRoutes = require('./routes/auth');
 const checkInsRoutes = require('./routes/checkIns'); // Ajusta la ruta según la estructura de tu proyecto
 require('dotenv').config(); // Cargar variables de entorno
 const path = require('path');
+const https = require('https');
+const fs = require('fs');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+
+const options = {
+    key: fs.readFileSync('server.key'), // Cambia esto si los archivos están en otra carpeta
+    cert: fs.readFileSync('server.cert'),
+};
 
 // Middleware
 app.use(morgan('dev'));
@@ -18,10 +26,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 
 app.use(cors({
-    origin: 'http://localhost:8080', // Dominio del frontend
+    origin: ['https://localhost:8080', 'https://127.0.0.1:8080'], // Permitir localhost y 127.0.0.1
     methods: ['GET', 'POST', 'PUT', 'DELETE'], // Métodos permitidos
-    credentials: true, // Permitir el envío de cookies (si es necesario)
+    credentials: true, // Permitir cookies y cabeceras de autenticación
 }));
+
 
 // Rutas
 app.use('/api/users', userRoutes);
@@ -36,6 +45,6 @@ app.get('/', (req, res) => {
 });
 
 // Iniciar el servidor
-app.listen(PORT, () => {
-    console.log(`Servidor ejecutándose en http://localhost:${PORT}`);
+https.createServer(options, app).listen(PORT, () => {
+    console.log(`Servidor ejecutándose en https://localhost:${PORT}`);
 });

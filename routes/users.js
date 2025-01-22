@@ -134,7 +134,7 @@ router.get('/:id', authenticateToken, (req, res) => {
         }
 
         // Base URL del servidor
-        const baseURL = 'http://localhost:3000';
+        const baseURL = 'https://localhost:3000';
 
         // Agregar URL completa a la imagen si existe
         const user = results[0][0];
